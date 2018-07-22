@@ -16,6 +16,8 @@ const isPrime = (x : number) => factors(x).length == 2;
 
 const largest = R.reduce((x: number, y : number) => x > y ? x : y, -Infinity);
 
-const solved = R.compose(largest, R.compose(R.filter(isPrime), factors));
+const solved = R.compose(R.compose(largest, R.filter(isPrime)), factors);
 
-console.log(R.applyTo(num, solved));
+//console.log(R.applyTo(num, solved));
+
+export {isPrime};
